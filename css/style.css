@@ -1,0 +1,51 @@
+table {
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
+    margin-top: 20px;
+}
+
+th {
+    background: #AFCDE7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: white;
+    padding: 5px 7px;
+}
+
+td {
+    background: #D8E6F3;
+}
+
+th:first-child, td:first-child {
+    text-align: center;
+}
+
+a, a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: darkred;
+}
+
+th.beauty {
+    border-radius: 6px;
+    right: 50px;
+    margin-right: 50px;
+}
+
+form#findFilms{
+    margin-top: 20px;
+}
+input#uploadFilms{
+    margin-top: 10px;
+}
+input.sortFilms,input.findFilms{
+    margin-top: 30px;
+}
+
