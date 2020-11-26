@@ -16,6 +16,7 @@ You should see that: "DB created successfully"
 
 Check that in MySQL Server:
 Just write correct settings
+(You can see them in Connection.php file or replace them)
 
 My settings:
 host=localhost
