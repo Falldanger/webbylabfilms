@@ -9,6 +9,7 @@ Application can be correctly working from PHP 7.1+ versions
 Next step:
 Run MySQL Server
 Go to the folder with the project and write in terminal from this point:
+
 1)cd database
 2)php CreateDatabase.php
 You should see that: "DB created successfully"
