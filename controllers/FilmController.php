@@ -2,7 +2,7 @@
 
 namespace controllers;
 
-include_once 'repositories/FilmRepository.php';
+include_once './repositories/FilmRepository.php';
 
 use database\Connection;
 use repositories\FilmRepository;
