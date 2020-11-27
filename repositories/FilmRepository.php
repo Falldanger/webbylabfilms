@@ -2,7 +2,7 @@
 
 namespace repositories;
 
-include_once 'repositories/contracts/FilmInterface.php';
+include_once './repositories/contracts/FilmInterface.php';
 
 use PDOException;
 use repositories\contracts\FilmInterface;
@@ -52,9 +52,8 @@ class FilmRepository implements FilmInterface
      */
     public function create(array $data): void
     {
-        $date_time = date('Y', strtotime($data['year']));
         $query = "INSERT INTO " . self::FILMS_TABLE . "(`film_name`, `format`,`year`,`actors`)
-        VALUES ('{$data['filmName']}', '{$data['format']}', '{$date_time}', '{$data['actors']}')";
+        VALUES ('{$data['filmName']}', '{$data['format']}', '{$data['year']}', '{$data['actors']}')";
         $this->db->prepare($query)->execute();
     }
 
