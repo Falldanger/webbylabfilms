@@ -2,7 +2,7 @@
 
 namespace repositories;
 
-include_once './repositories/contracts/FilmInterface.php';
+include './repositories/contracts/FilmInterface.php';
 
 use PDOException;
 use repositories\contracts\FilmInterface;

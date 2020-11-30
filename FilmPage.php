@@ -1,7 +1,7 @@
 <?php
 
-include_once './database/Connection.php';
-include_once './controllers/FilmController.php';
+include './database/Connection.php';
+include './controllers/FilmController.php';
 
 use database\Connection;
 use controllers\FilmController;
