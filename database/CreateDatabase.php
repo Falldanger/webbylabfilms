@@ -2,7 +2,7 @@
 
 namespace database;
 
-include './Connection.php';
+include_once './Connection.php';
 
 use database\Connection as Connection;
 use PDO;
