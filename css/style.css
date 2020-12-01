@@ -49,3 +49,8 @@ input.sortFilms,input.findFilms{
     margin-top: 30px;
 }
 
+h4#filmsTable{
+  margin-top: 14px;
+    color: #0c5460;
+}
+

@@ -17,7 +17,7 @@ try {
     $connection->exec($sql);
     $sql = "use $databaseName[1]";
     $connection->exec($sql);
-    $sql = "CREATE TABLE IF NOT EXISTS FILMS (
+    $sql = "CREATE TABLE IF NOT EXISTS films (
                 id int(11) AUTO_INCREMENT PRIMARY KEY,
                 film_name varchar(64) NOT NULL,
                 year year(4) NOT NULL,

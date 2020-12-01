@@ -12,17 +12,17 @@ $filmsTableColumnsForSearching = $filmsTableColumnsForSorting + [FilmRepository:
 $errors = [];
 
 if (isset($_POST['addFilm'])) {
-    $indexController = new filmController(new Connection());
-    $errors = $indexController->create($_POST);
+    $filmController = new filmController(new Connection());
+    $errors = $filmController->create($_POST);
 }
 if (isset($_POST['deleteFilm'])) {
-    $indexController = new filmController(new Connection());
-    $indexController->delete($_POST['deleteFilm']);
+    $filmController = new filmController(new Connection());
+    $filmController->delete($_POST['deleteFilm']);
 }
 
 if (isset($_POST['uploadFilms'])) {
-    $indexController = new filmController(new Connection());
-    $uploadStatus = $indexController->upload($_FILES['filmsFile']['tmp_name']);
+    $filmController = new filmController(new Connection());
+    $uploadStatus = $filmController->upload($_FILES['filmsFile']['tmp_name'], $_FILES['filmsFile']['name']);
 }
 
 ?>
@@ -130,7 +130,8 @@ if (isset($_POST['uploadFilms'])) {
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <input type="submit" class="btn btn-success sortFilms" name="sortFilms" id="sortFilms" value="Sort">
+                        <input type="submit" class="btn btn-success sortFilms" name="sortFilms" id="sortFilms"
+                               value="Sort">
                     </div>
                 </div>
             </form>
@@ -153,12 +154,14 @@ if (isset($_POST['uploadFilms'])) {
                     </div>
 
                     <div class="col-md-4">
-                        <input type="submit" class="btn btn-success findFilms" name="findFilms" id="findFilms" value="Search">
+                        <input type="submit" class="btn btn-success findFilms" name="findFilms" id="findFilms"
+                               value="Search">
                     </div>
                 </div>
             </form>
             <div>
-                <table id="result">
+                <h4 id="filmsTable">Films table</h4>
+                <table id="filmsTable">
                     <?php
 
                     $connection = new filmController(new Connection());
@@ -167,7 +170,7 @@ if (isset($_POST['uploadFilms'])) {
                     } elseif (isset($_POST['findFilms'])) {
                         echo $connection->generateTable($connection->searchByColumn($_POST['findByColumn'], $_POST['findByKeyWord']));
                     } else {
-                        echo $connection->generateTable();
+                        echo $connection->generateTable($connection->getConnection()->all());
                     }
 
                     ?>
